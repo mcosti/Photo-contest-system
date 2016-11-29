@@ -1,0 +1,118 @@
+.card {
+    background-color: white;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: #4a4a4a;
+    max-width: 100%;
+    position: relative;
+    width: 350px;
+    margin-bottom:10px;
+    word-wrap: break-word;
+}
+
+
+
+.card-image {
+    display:block;
+    position:relative;
+}
+
+.card-image-header {
+    position: absolute;
+    text-align: right;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 50px;
+    opacity: 0;
+    background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(rgba(0,0,0,0.6)));
+    background: -webkit-linear-gradient(bottom, transparent 0%, rgba(0,0,0,0.6) 100%);
+    background: -moz-linear-gradient(bottom, transparent 0%, rgba(0,0,0,0.6) 100%);
+    background: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.6) 100%);
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+    color:white;
+    font-size:16px;
+}
+
+.card-image-header i {
+    margin-right:10px;
+}
+
+
+
+.card-image-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    min-height: 50px;
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0,0,0,0.6)));
+    background: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,0.6) 100%);
+    background: -moz-linear-gradient(top, transparent 0%, rgba(0,0,0,0.6) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 100%);
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+    pointer-events:none;
+}
+
+.card-image-bottom p {
+    color:white;
+    margin-left:10px;
+}
+
+
+.card:hover .card-image-header, .card:hover .card-image-bottom{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.card-image img{
+    width:350px;
+    max-width:100%;
+
+}
+
+
+
+.card-content {
+    padding:20px;
+}
+
+
+@media only screen and (max-width : 480px) {
+    .card {
+        width:250px;
+    }
+    .card-image img {
+        width:250px;
+    }
+
+    .grid {
+        width:250px!important;
+    }
+
+}
+
+/* tablet */
+@media all and (max-width: 1024px) {
+    .card-image-header {
+        opacity:1;
+        visibility:visible;
+    }
+
+    .card-image-bottom {
+        opacity:1;
+        visibility:visible;
+    }
+}
+
+
+
+
+a:hover {
+    text-decoration:none;
+}
