@@ -25,6 +25,10 @@ Route::get('/concurs', 'ContestController@index');
 Route::get('/concurs/entry/{id}', 'ContestController@single');
 Route::get('/concurs/vote/{id}/',['as' => 'entry.vote', 'uses' => 'ContestController@vote', 'middleware' => 'auth']);
 
+Route::get('/concurs/search/', 'SearchController@index');
+
+
+
 
 Route::get('/auth/fblogin', 'SocialAuthController@redirect');
 Route::get('/auth/callback', 'SocialAuthController@callback');

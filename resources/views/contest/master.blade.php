@@ -57,21 +57,38 @@
                 <a class="navbar-brand" href="{{ url('/concurs') }}">
                     {{ config('app.name') }}
                 </a>
+
+
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <form class="navbar-form form-inline" role="search" type="GET" action="/concurs/search/">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Cauta" name="author">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                        </form>
+                    </li>
 
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('auth/fblogin') }}">
+
+
+
+                @if (Auth::guest())
+                        <li class="">
+                            <a href="{{ url('auth/fblogin') }}">
                                 <button class=" btn btn-icon btn-facebook">Login cu Facebook</button>
-                            </a></li>
+                            </a>
+                        </li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

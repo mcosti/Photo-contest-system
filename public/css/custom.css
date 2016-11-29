@@ -116,3 +116,10 @@
 a:hover {
     text-decoration:none;
 }
+
+.form-inline {
+    max-width:100%;
+}
+.form-inline div {
+    display:inline-block;
+}

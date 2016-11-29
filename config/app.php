@@ -174,6 +174,8 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Backpack\PermissionManager\PermissionManagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+
 
 
 

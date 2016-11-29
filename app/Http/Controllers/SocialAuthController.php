@@ -9,11 +9,13 @@ use App\Http\Controllers\Controller;
 use App\SocialAccountService;
 use Socialite;
 use Auth;
+use URL;
 
 class SocialAuthController extends Controller
 {
-    public function redirect()
+    public function redirect(Request $request)
     {
+        $request->session()->put('url', URL::previous());
         return Socialite::driver('facebook')->redirect();
     }
 
@@ -24,10 +26,10 @@ class SocialAuthController extends Controller
         }
         catch(\Exception $e) {
             $request->session()->flash('alert-danger', 'Nu ai acceptat conexiunea cu Facebook!');
-            return redirect('/');
+            return redirect($request->session()->get('url'));
         }
         Auth::login($user, true);
         $request->session()->flash('alert-success', 'Te-ai conectat cu Facebook!');
-        return redirect()->back();
+        return redirect($request->session()->get('url'));
     }
 }
